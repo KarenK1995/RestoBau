@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid'
 // ** Icons Imports
 import Poll from 'mdi-material-ui/Poll'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
+import AccountOutline from 'mdi-material-ui/AccountOutline'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
 import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
 
@@ -21,6 +22,7 @@ import StatisticsCard from 'src/views/dashboard/StatisticsCard'
 import WeeklyOverview from 'src/views/dashboard/WeeklyOverview'
 import DepositWithdraw from 'src/views/dashboard/DepositWithdraw'
 import SalesByCountries from 'src/views/dashboard/SalesByCountries'
+import { BriefcaseVariant } from 'mdi-material-ui'
 
 const Dashboard = () => {
   return (
@@ -32,15 +34,9 @@ const Dashboard = () => {
         <Grid item xs={12} md={8}>
           <StatisticsCard />
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
-          <WeeklyOverview />
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
-          <TotalEarning />
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item xs={12} md={12} lg={12}>
           <Grid container spacing={6}>
-            <Grid item xs={6}>
+            <Grid item xs={6} sm={3} md={3} lg={3}>
               <CardStatisticsVerticalComponent
                 stats='$25.6k'
                 icon={<Poll />}
@@ -50,39 +46,45 @@ const Dashboard = () => {
                 subtitle='Weekly Profit'
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} sm={3} md={3} lg={3}>
               <CardStatisticsVerticalComponent
                 stats='$78'
-                title='Refunds'
+                title='Orders'
                 trend='negative'
                 color='secondary'
                 trendNumber='-15%'
                 subtitle='Past Month'
-                icon={<CurrencyUsd />}
+                icon={<BriefcaseVariant />}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} sm={3} md={3} lg={3}>
               <CardStatisticsVerticalComponent
                 stats='862'
                 trend='negative'
                 trendNumber='-18%'
-                title='New Project'
+                title='Revenue'
                 subtitle='Yearly Project'
-                icon={<BriefcaseVariantOutline />}
+                icon={<CurrencyUsd />}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} sm={3} md={3} lg={3}>
               <CardStatisticsVerticalComponent
                 stats='15'
                 color='warning'
                 trend='negative'
                 trendNumber='-18%'
                 subtitle='Last Week'
-                title='Sales Queries'
-                icon={<HelpCircleOutline />}
+                title='Customers'
+                icon={<AccountOutline />}
               />
             </Grid>
           </Grid>
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <WeeklyOverview />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <TotalEarning />
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           <SalesByCountries />
