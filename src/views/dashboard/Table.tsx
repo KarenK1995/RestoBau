@@ -14,11 +14,11 @@ import TableContainer from '@mui/material/TableContainer'
 import { ThemeColor } from 'src/@core/layouts/types'
 
 interface RowType {
-  age: number
+  rating: number
   name: string
-  date: string
+  last_ordered: string
   email: string
-  salary: string
+  orders_num: string
   status: string
   designation: string
 }
@@ -31,72 +31,72 @@ interface StatusObj {
 
 const rows: RowType[] = [
   {
-    age: 27,
+    rating: 27,
     status: 'current',
-    date: '09/27/2018',
+    last_ordered: '09/27/2018',
     name: 'Sally Quinn',
-    salary: '$19586.23',
+    orders_num: '433',
     email: 'eebsworth2m@sbwire.com',
     designation: 'Human Resources Assistant'
   },
   {
-    age: 61,
-    date: '09/23/2016',
-    salary: '$23896.35',
+    rating: 61,
+    last_ordered: '09/23/2016',
+    orders_num: '334',
     status: 'professional',
     name: 'Margaret Bowers',
     email: 'kocrevy0@thetimes.co.uk',
     designation: 'Nuclear Power Engineer'
   },
   {
-    age: 59,
-    date: '10/15/2017',
+    rating: 59,
+    last_ordered: '10/15/2017',
     name: 'Minnie Roy',
     status: 'rejected',
-    salary: '$18991.67',
+    orders_num: '321',
     email: 'ediehn6@163.com',
     designation: 'Environmental Specialist'
   },
   {
-    age: 30,
-    date: '06/12/2018',
+    rating: 30,
+    last_ordered: '06/12/2018',
     status: 'resigned',
-    salary: '$19252.12',
+    orders_num: '311',
     name: 'Ralph Leonard',
     email: 'dfalloona@ifeng.com',
     designation: 'Sales Representative'
   },
   {
-    age: 66,
+    rating: 66,
     status: 'applied',
-    date: '03/24/2018',
-    salary: '$13076.28',
+    last_ordered: '03/24/2018',
+    orders_num: '310',
     name: 'Annie Martin',
     designation: 'Operator',
     email: 'sganderton2@tuttocitta.it'
   },
   {
-    age: 33,
-    date: '08/25/2017',
-    salary: '$10909.52',
+    rating: 33,
+    last_ordered: '08/25/2017',
+    orders_num: '306',
     name: 'Adeline Day',
     status: 'professional',
     email: 'hnisius4@gnu.org',
     designation: 'Senior Cost Accountant'
   },
   {
-    age: 61,
+    rating: 61,
     status: 'current',
-    date: '06/01/2017',
-    salary: '$17803.80',
+    last_ordered: '06/01/2017',
+    orders_num: '288',
     name: 'Lora Jackson',
     designation: 'Geologist',
     email: 'ghoneywood5@narod.ru'
   },
   {
-    age: 22,
-    date: '12/03/2017',
-    salary: '$12336.17',
+    rating: 22,
+    last_ordered: '12/03/2017',
+    orders_num: '264',
     name: 'Rodney Sharp',
     status: 'professional',
     designation: 'Cost Accountant',
@@ -117,13 +117,13 @@ const DashboardTable = () => {
     <Card>
       <TableContainer>
         <Table sx={{ minWidth: 800 }} aria-label='table in dashboard'>
-          <TableHead>
+          <TableHead sx={{ background: '#F7F7F7' }}>
             <TableRow>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
-              <TableCell>Date</TableCell>
-              <TableCell>Salary</TableCell>
-              <TableCell>Age</TableCell>
+              <TableCell>No. of Orders</TableCell>
+              <TableCell>Last Ordered</TableCell>
+              <TableCell>Rating</TableCell>
               <TableCell>Status</TableCell>
             </TableRow>
           </TableHead>
@@ -137,9 +137,9 @@ const DashboardTable = () => {
                   </Box>
                 </TableCell>
                 <TableCell>{row.email}</TableCell>
-                <TableCell>{row.date}</TableCell>
-                <TableCell>{row.salary}</TableCell>
-                <TableCell>{row.age}</TableCell>
+                <TableCell>{row.orders_num}</TableCell>
+                <TableCell>{row.last_ordered}</TableCell>
+                <TableCell>{row.rating}</TableCell>
                 <TableCell>
                   <Chip
                     label={row.status}
