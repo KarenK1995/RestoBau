@@ -36,6 +36,12 @@ const salesData: DataType[] = [
     icon: <TrendingUp sx={{ fontSize: '1.75rem' }} />
   },
   {
+    stats: '12.5k',
+    title: 'Customers',
+    color: 'success',
+    icon: <AccountOutline sx={{ fontSize: '1.75rem' }} />
+  },
+  {
     stats: '1.54k',
     color: 'warning',
     title: 'Products',
@@ -46,12 +52,6 @@ const salesData: DataType[] = [
     color: 'info',
     title: 'Revenue',
     icon: <CurrencyUsd sx={{ fontSize: '1.75rem' }} />
-  },
-  {
-    stats: '12.5k',
-    title: 'Customers',
-    color: 'success',
-    icon: <AccountOutline sx={{ fontSize: '1.75rem' }} />
   }
 ]
 
